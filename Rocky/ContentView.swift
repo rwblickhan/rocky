@@ -5,8 +5,8 @@
 //  Created by Russell Blickhan on 11/17/22.
 //
 
-import SwiftUI
 import CoreData
+import SwiftUI
 
 struct ContentView: View {
     @Environment(\.managedObjectContext) private var viewContext
@@ -58,7 +58,7 @@ struct ContentView: View {
         }
     }
 
-    private func deleteItems(offsets: IndexSet) {
+    private func deleteItems(offsets _: IndexSet) {
         withAnimation {
 //            offsets.map { items[$0] }.forEach(viewContext.delete)
 //

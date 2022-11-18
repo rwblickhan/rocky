@@ -21,6 +21,7 @@
 		CD6A0E1529271BF80090258D /* LogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6A0E1429271BF80090258D /* LogView.swift */; };
 		CD6A0E1729271C050090258D /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6A0E1629271C050090258D /* StatsView.swift */; };
 		CD6A0E1929271C180090258D /* ClimbView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6A0E1829271C180090258D /* ClimbView.swift */; };
+		CD6A0E1B292744BB0090258D /* GradeButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6A0E1A292744BB0090258D /* GradeButtonView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		CD6A0E1429271BF80090258D /* LogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogView.swift; sourceTree = "<group>"; };
 		CD6A0E1629271C050090258D /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
 		CD6A0E1829271C180090258D /* ClimbView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimbView.swift; sourceTree = "<group>"; };
+		CD6A0E1A292744BB0090258D /* GradeButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeButtonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,7 +116,6 @@
 				CD6A0DE12927148D0090258D /* ContentView.swift */,
 				CD6A0DE32927148E0090258D /* Assets.xcassets */,
 				CD6A0DE82927148E0090258D /* Persistence.swift */,
-				CD6A0DEA2927148E0090258D /* Rocky.xcdatamodeld */,
 				CD6A0DE52927148E0090258D /* Preview Content */,
 			);
 			path = Rocky;
@@ -148,6 +149,7 @@
 		CD6A0E10292715B50090258D /* Data Model */ = {
 			isa = PBXGroup;
 			children = (
+				CD6A0DEA2927148E0090258D /* Rocky.xcdatamodeld */,
 				CD6A0E0E292715140090258D /* Grade.swift */,
 			);
 			path = "Data Model";
@@ -160,6 +162,7 @@
 				CD6A0E1429271BF80090258D /* LogView.swift */,
 				CD6A0E1629271C050090258D /* StatsView.swift */,
 				CD6A0E1829271C180090258D /* ClimbView.swift */,
+				CD6A0E1A292744BB0090258D /* GradeButtonView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -298,6 +301,7 @@
 				CD6A0DE92927148E0090258D /* Persistence.swift in Sources */,
 				CD6A0DE22927148D0090258D /* ContentView.swift in Sources */,
 				CD6A0DEC2927148E0090258D /* Rocky.xcdatamodeld in Sources */,
+				CD6A0E1B292744BB0090258D /* GradeButtonView.swift in Sources */,
 				CD6A0E0F292715140090258D /* Grade.swift in Sources */,
 				CD6A0E1729271C050090258D /* StatsView.swift in Sources */,
 				CD6A0DE02927148D0090258D /* RockyApp.swift in Sources */,

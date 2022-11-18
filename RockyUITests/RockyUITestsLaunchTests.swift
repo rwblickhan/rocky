@@ -8,7 +8,6 @@
 import XCTest
 
 final class RockyUITestsLaunchTests: XCTestCase {
-
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true
     }

@@ -8,13 +8,33 @@
 import SwiftUI
 
 struct LogView: View {
+    @FetchRequest(
+        sortDescriptors: [NSSortDescriptor(keyPath: \Climb.timestamp, ascending: false)],
+        animation: .default)
+    private var climbs: FetchedResults<Climb>
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            List {
+                ForEach(climbs) { climb in
+                    HStack {
+                        Text(Grade(rawValue: climb.grade)?.displayName ?? "null")
+                        Text(climb.timestamp?.formatted() ?? "null")
+                    }
+                }
+            }
+            .navigationTitle("Climb Log")
+//            .toolbar {
+//                ToolbarItem(placement: .navigationBarLeading) { editButton }
+//                ToolbarItem(placement: .navigationBarTrailing) { addButton }
+//            }
+        }
     }
 }
 
 struct LogView_Previews: PreviewProvider {
     static var previews: some View {
         LogView()
+            .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }

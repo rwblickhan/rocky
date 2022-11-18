@@ -9,7 +9,22 @@ import SwiftUI
 
 struct ClimbView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Grid() {
+            ForEach(grades, id: \.0.id) { gradePair in
+                GridRow {
+                    GradeButtonView(gradePair.0)
+                    GradeButtonView(gradePair.1)
+                }
+            }
+        }
+    }
+    
+    private var grades: [(Grade, Grade)] {
+        var grades = [(Grade, Grade)]()
+        for i in stride(from: 0, to: Grade.allCases.count - 1, by: 2) {
+            grades.append((Grade.allCases[i], Grade.allCases[i+1]))
+        }
+        return grades
     }
 }
 

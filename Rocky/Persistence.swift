@@ -13,9 +13,18 @@ struct PersistenceController {
     static var preview: PersistenceController = {
         let result = PersistenceController(inMemory: true)
         let viewContext = result.container.viewContext
+        
+        let oneWeekAgo: TimeInterval = 7 * 24 * 60 * 60
+        var dates = [Date]()
         for _ in 0..<10 {
-            let newItem = Item(context: viewContext)
-            newItem.timestamp = Date()
+            dates.append(Date(timeIntervalSinceNow: Double.random(in: -oneWeekAgo...0)))
+        }
+        
+        for date in dates {
+            let newClimb = Climb(context: viewContext)
+            newClimb.timestamp = date
+            newClimb.grade = Int16.random(in: 0...11)
+            newClimb.successful = Bool.random()
         }
         do {
             try viewContext.save()

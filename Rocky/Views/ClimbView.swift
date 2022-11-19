@@ -9,19 +9,23 @@ import SwiftUI
 
 struct ClimbView: View {
     @Environment(\.managedObjectContext) private var viewContext
+    
+    @State var expandedGrade: Grade?
 
     var body: some View {
         Grid {
             ForEach(grades, id: \.0.id) { gradePair in
                 GridRow {
                     GradeButtonView(
-                        gradePair.0,
+                        grade: gradePair.0,
                         onSuccessAction: { saveClimb(grade: gradePair.0, successful: true) },
-                        onFailureAction: { saveClimb(grade: gradePair.0, successful: false) })
+                        onFailureAction: { saveClimb(grade: gradePair.0, successful: false) },
+                        expandedGrade: $expandedGrade)
                     GradeButtonView(
-                        gradePair.1,
+                        grade: gradePair.1,
                         onSuccessAction: { saveClimb(grade: gradePair.1, successful: true) },
-                        onFailureAction: { saveClimb(grade: gradePair.1, successful: false) })
+                        onFailureAction: { saveClimb(grade: gradePair.1, successful: false) },
+                        expandedGrade: $expandedGrade)
                 }
                 .padding()
             }
@@ -58,6 +62,6 @@ struct ClimbView: View {
 
 struct ClimbView_Previews: PreviewProvider {
     static var previews: some View {
-        ClimbView()
+        ClimbView(expandedGrade: .v0)
     }
 }

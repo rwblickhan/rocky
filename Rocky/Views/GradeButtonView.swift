@@ -8,27 +8,22 @@
 import SwiftUI
 
 struct GradeButtonView: View {
-    private let grade: Grade
-    private let onSuccessAction: () -> Void
-    private let onFailureAction: () -> Void
+    let grade: Grade
+    let onSuccessAction: () -> Void
+    let onFailureAction: () -> Void
 
-    @State private var expanded = false
+    @Binding var expandedGrade: Grade?
     @State private var scale = 1.0
-
+    
+    private var expanded: Bool { grade == expandedGrade }
+    
     private let impactMed = UIImpactFeedbackGenerator(style: .medium)
-
-    init(_ grade: Grade, onSuccessAction: @escaping () -> Void, onFailureAction: @escaping () -> Void) {
-        self.grade = grade
-        self.onSuccessAction = onSuccessAction
-        self.onFailureAction = onFailureAction
-    }
 
     var body: some View {
         Button(action: {
             impactMed.impactOccurred()
             withAnimation {
-                scale = 1.2
-                expanded = true
+                expandedGrade = grade
             }
         }, label: {
             HStack {
@@ -39,7 +34,7 @@ struct GradeButtonView: View {
             .background(.brown)
             .foregroundColor(.white)
             .cornerRadius(16)
-            .scaleEffect(scale)
+            .scaleEffect(expanded ? 1.2 : 1.0)
         })
         .onAppear {
             guard expanded else { return }
@@ -49,8 +44,7 @@ struct GradeButtonView: View {
 
     private func reset() {
         withAnimation {
-            scale = 1.0
-            expanded = false
+            expandedGrade = nil
         }
     }
 
@@ -92,6 +86,7 @@ struct GradeButtonView: View {
 
 struct GradeButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        GradeButtonView(.v0, onSuccessAction: {}, onFailureAction: {})
+        GradeButtonView(grade: .v0, onSuccessAction: {}, onFailureAction: {}, expandedGrade: .constant(.v1))
+        GradeButtonView(grade: .v0, onSuccessAction: {}, onFailureAction: {}, expandedGrade: .constant(.v0))
     }
 }

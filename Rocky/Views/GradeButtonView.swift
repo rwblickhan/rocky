@@ -14,9 +14,9 @@ struct GradeButtonView: View {
 
     @Binding var expandedGrade: Grade?
     @State private var scale = 1.0
-    
+
     private var expanded: Bool { grade == expandedGrade }
-    
+
     private let impactMed = UIImpactFeedbackGenerator(style: .medium)
 
     var body: some View {

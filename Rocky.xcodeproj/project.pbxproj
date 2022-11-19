@@ -22,6 +22,7 @@
 		CD6A0E1729271C050090258D /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6A0E1629271C050090258D /* StatsView.swift */; };
 		CD6A0E1929271C180090258D /* ClimbView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6A0E1829271C180090258D /* ClimbView.swift */; };
 		CD6A0E1D292749390090258D /* GradeButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6A0E1C292749390090258D /* GradeButtonView.swift */; };
+		CD6A0E20292875010090258D /* Drops in Frameworks */ = {isa = PBXBuildFile; productRef = CD6A0E1F292875010090258D /* Drops */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD6A0E20292875010090258D /* Drops in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -183,6 +185,9 @@
 			dependencies = (
 			);
 			name = Rocky;
+			packageProductDependencies = (
+				CD6A0E1F292875010090258D /* Drops */,
+			);
 			productName = Rocky;
 			productReference = CD6A0DDC2927148D0090258D /* Rocky.app */;
 			productType = "com.apple.product-type.application";
@@ -255,6 +260,9 @@
 				Base,
 			);
 			mainGroup = CD6A0DD32927148D0090258D;
+			packageReferences = (
+				CD6A0E1E292875010090258D /* XCRemoteSwiftPackageReference "Drops" */,
+			);
 			productRefGroup = CD6A0DDD2927148D0090258D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -631,6 +639,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CD6A0E1E292875010090258D /* XCRemoteSwiftPackageReference "Drops" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/omaralbeik/Drops.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CD6A0E1F292875010090258D /* Drops */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CD6A0E1E292875010090258D /* XCRemoteSwiftPackageReference "Drops" */;
+			productName = Drops;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		CD6A0DEA2927148E0090258D /* Rocky.xcdatamodeld */ = {

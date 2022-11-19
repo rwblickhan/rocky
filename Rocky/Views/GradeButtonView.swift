@@ -41,6 +41,10 @@ struct GradeButtonView: View {
             .cornerRadius(16)
             .scaleEffect(scale)
         })
+        .onAppear {
+            guard expanded else { return }
+            reset()
+        }
     }
 
     private func reset() {

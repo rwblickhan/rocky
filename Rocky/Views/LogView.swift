@@ -12,12 +12,13 @@ struct LogView: View {
         sortDescriptors: [NSSortDescriptor(keyPath: \Climb.timestamp, ascending: false)],
         animation: .default)
     private var climbs: FetchedResults<Climb>
-    
+
     var body: some View {
         NavigationView {
             List {
                 ForEach(climbs) { climb in
                     HStack {
+                        Text("\(climb.successful ? "✅" : "❌")")
                         Text(Grade(rawValue: climb.grade)?.displayName ?? "null")
                         Text(climb.timestamp?.formatted() ?? "null")
                     }

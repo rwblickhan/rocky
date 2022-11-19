@@ -20,7 +20,7 @@ enum Grade: Int16, CaseIterable, Identifiable {
     case v8
     case v9
     case v10
-    
+
     var displayName: String {
         switch self {
         case .vb: return "VB"
@@ -37,6 +37,6 @@ enum Grade: Int16, CaseIterable, Identifiable {
         case .v10: return "V10"
         }
     }
-    
-    var id: Int16 { self.rawValue }
+
+    var id: Int16 { rawValue }
 }

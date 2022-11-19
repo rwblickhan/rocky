@@ -19,25 +19,13 @@ struct ClimbView: View {
                 GridRow {
                     GradeButtonView(
                         grade: gradePair.0,
-                        onSuccessAction: {
-                            saveClimb(grade: gradePair.0, successful: true)
-                            Drops.show(Drop(title: "Good job!", icon: UIImage(systemName: "checkmark")))
-                        },
-                        onFailureAction: {
-                            saveClimb(grade: gradePair.0, successful: false)
-                            Drops.show(Drop(title: "Aww, too bad", icon: UIImage(systemName: "xmark")))
-                        },
+                        onSuccessAction: { logSuccess(grade: gradePair.0) },
+                        onFailureAction: { logFailure(grade: gradePair.0) },
                         expandedGrade: $expandedGrade)
                     GradeButtonView(
                         grade: gradePair.1,
-                        onSuccessAction: {
-                            saveClimb(grade: gradePair.1, successful: true)
-                            Drops.show(Drop(title: "Good job!", icon: UIImage(systemName: "checkmark")))
-                        },
-                        onFailureAction: {
-                            saveClimb(grade: gradePair.1, successful: false)
-                            Drops.show(Drop(title: "Aww, too bad", icon: UIImage(systemName: "xmark")))
-                        },
+                        onSuccessAction: { logSuccess(grade: gradePair.1) },
+                        onFailureAction: { logFailure(grade: gradePair.1) },
                         expandedGrade: $expandedGrade)
                 }
                 .padding()
@@ -52,6 +40,22 @@ struct ClimbView: View {
             gradePairs.append((allGrades[i], allGrades[i + 1]))
         }
         return gradePairs
+    }
+
+    private func logSuccess(grade: Grade) {
+        saveClimb(grade: grade, successful: true)
+        Drops
+            .show(Drop(
+                title: String(localized: "Good job!"),
+                icon: UIImage(systemName: "checkmark")))
+    }
+
+    private func logFailure(grade: Grade) {
+        saveClimb(grade: grade, successful: true)
+        Drops
+            .show(Drop(
+                title: String(localized: "Aww, too bad"),
+                icon: UIImage(systemName: "xmark")))
     }
 
     private func saveClimb(grade: Grade, successful: Bool) {

@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		CD6A0DE02927148D0090258D /* RockyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6A0DDF2927148D0090258D /* RockyApp.swift */; };
-		CD6A0DE22927148D0090258D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6A0DE12927148D0090258D /* ContentView.swift */; };
 		CD6A0DE42927148E0090258D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD6A0DE32927148E0090258D /* Assets.xcassets */; };
 		CD6A0DE72927148E0090258D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD6A0DE62927148E0090258D /* Preview Assets.xcassets */; };
 		CD6A0DE92927148E0090258D /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6A0DE82927148E0090258D /* Persistence.swift */; };
@@ -45,7 +44,6 @@
 /* Begin PBXFileReference section */
 		CD6A0DDC2927148D0090258D /* Rocky.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rocky.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD6A0DDF2927148D0090258D /* RockyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RockyApp.swift; sourceTree = "<group>"; };
-		CD6A0DE12927148D0090258D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		CD6A0DE32927148E0090258D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CD6A0DE62927148E0090258D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CD6A0DE82927148E0090258D /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -115,7 +113,6 @@
 				CD6A0E1129271B6A0090258D /* Views */,
 				CD6A0E10292715B50090258D /* Data Model */,
 				CD6A0DDF2927148D0090258D /* RockyApp.swift */,
-				CD6A0DE12927148D0090258D /* ContentView.swift */,
 				CD6A0DE32927148E0090258D /* Assets.xcassets */,
 				CD6A0DE82927148E0090258D /* Persistence.swift */,
 				CD6A0DE52927148E0090258D /* Preview Content */,
@@ -307,7 +304,6 @@
 			files = (
 				CD6A0E1929271C180090258D /* ClimbView.swift in Sources */,
 				CD6A0DE92927148E0090258D /* Persistence.swift in Sources */,
-				CD6A0DE22927148D0090258D /* ContentView.swift in Sources */,
 				CD6A0DEC2927148E0090258D /* Rocky.xcdatamodeld in Sources */,
 				CD6A0E1D292749390090258D /* GradeButtonView.swift in Sources */,
 				CD6A0E0F292715140090258D /* Grade.swift in Sources */,

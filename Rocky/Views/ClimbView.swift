@@ -19,13 +19,13 @@ struct ClimbView: View {
                 GridRow {
                     GradeButtonView(
                         grade: gradePair.0,
-                        onSuccessAction: { logSuccess(grade: gradePair.0) },
-                        onFailureAction: { logFailure(grade: gradePair.0) },
+                        onSuccessAction: { log(grade: gradePair.0, successful: true) },
+                        onFailureAction: { log(grade: gradePair.0, successful: false) },
                         expandedGrade: $expandedGrade)
                     GradeButtonView(
                         grade: gradePair.1,
-                        onSuccessAction: { logSuccess(grade: gradePair.1) },
-                        onFailureAction: { logFailure(grade: gradePair.1) },
+                        onSuccessAction: { log(grade: gradePair.1, successful: true) },
+                        onFailureAction: { log(grade: gradePair.1, successful: false) },
                         expandedGrade: $expandedGrade)
                 }
                 .padding()
@@ -42,23 +42,23 @@ struct ClimbView: View {
         return gradePairs
     }
 
-    private func logSuccess(grade: Grade) {
-        saveClimb(grade: grade, successful: true)
-        Drops
-            .show(Drop(
-                title: String(localized: "Good job!"),
-                icon: UIImage(systemName: "checkmark")))
+    private func log(grade: Grade, successful: Bool) {
+        let climb = saveClimb(grade: grade, successful: successful)
+        let title = successful
+            ? String(localized: "Good job!")
+            : String(localized: "Aww, too bad...")
+
+        Drops.show(Drop(
+            title: title,
+            action: Drop.Action(
+                icon: UIImage(systemName: "arrow.uturn.backward"),
+                handler: {
+                    Drops.hideCurrent()
+                    delete(climb: climb)
+                })))
     }
 
-    private func logFailure(grade: Grade) {
-        saveClimb(grade: grade, successful: true)
-        Drops
-            .show(Drop(
-                title: String(localized: "Aww, too bad"),
-                icon: UIImage(systemName: "xmark")))
-    }
-
-    private func saveClimb(grade: Grade, successful: Bool) {
+    private func saveClimb(grade: Grade, successful: Bool) -> Climb {
         withAnimation {
             let newClimb = Climb(context: viewContext)
             newClimb.grade = grade.rawValue
@@ -68,8 +68,24 @@ struct ClimbView: View {
             do {
                 try viewContext.save()
             } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+                // swiftlint:disable no-warnings
+                #warning("Replace this implementation with code to handle the error appropriately.")
+                let nsError = error as NSError
+                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+            }
+            return newClimb
+        }
+    }
+
+    private func delete(climb: Climb) {
+        withAnimation {
+            viewContext.delete(climb)
+
+            do {
+                try viewContext.save()
+            } catch {
+                // swiftlint:disable no-warnings
+                #warning("Replace this implementation with code to handle the error appropriately.")
                 let nsError = error as NSError
                 fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
             }

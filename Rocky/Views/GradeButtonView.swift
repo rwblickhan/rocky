@@ -34,7 +34,7 @@ struct GradeButtonView: View {
             .background(.brown)
             .foregroundColor(.white)
             .cornerRadius(16)
-            .scaleEffect(expanded ? 1.2 : 1.0)
+            .scaleEffect(expanded ? 1.1 : 1.0)
         })
         .onAppear {
             guard expanded else { return }

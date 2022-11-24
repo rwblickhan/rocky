@@ -12,6 +12,8 @@ struct ClimbView: View {
     @Environment(\.managedObjectContext) private var viewContext
 
     @State var expandedGrade: Grade?
+    
+    private let impactMed = UIImpactFeedbackGenerator(style: .medium)
 
     var body: some View {
         Grid {
@@ -53,6 +55,7 @@ struct ClimbView: View {
             action: Drop.Action(
                 icon: UIImage(systemName: "arrow.uturn.backward"),
                 handler: {
+                    impactMed.impactOccurred()
                     Drops.hideCurrent()
                     delete(climb: climb)
                 })))

@@ -30,21 +30,34 @@ struct LogView: View {
 
     var body: some View {
         NavigationView {
-            List {
-                ForEach(batchedClimbs, id: \.timestamp) { batch in
-                    Section {
-                        ForEach(batch.climbs) { climb in
-                            LogClimbRowView(climb: climb)
+            VStack {
+                List {
+                    ForEach(batchedClimbs, id: \.timestamp) { batch in
+                        Section {
+                            ForEach(batch.climbs) { climb in
+                                LogClimbRowView(climb: climb)
+                            }
+                        } header: {
+                            Text(batch.timestamp.formatted(.dateTime.day().month(.wide).year()))
                         }
-                    } header: {
-                        Text(batch.timestamp.formatted(.dateTime.day().month(.wide).year()))
+                    }
+                    .onDelete(perform: deleteItems)
+                }
+                .headerProminence(.increased)
+                .navigationTitle("Climb Log")
+                .toolbar {
+                    if !climbs.isEmpty {
+                        ToolbarItem(placement: .navigationBarLeading) { EditButton() }
+                    }
+                    ToolbarItem(placement: .navigationBarTrailing) { NavigationLink(destination: StatsView(), label: {
+                        Text("Stats")
+                    })
                     }
                 }
-                .onDelete(perform: deleteItems)
+                Divider()
+                LogButtonsView()
             }
-            .headerProminence(.increased)
-            .navigationTitle("Climb Log")
-            .toolbar { ToolbarItem(placement: .navigationBarTrailing) { EditButton() } }
+            .listStyle(.inset)
         }
     }
 

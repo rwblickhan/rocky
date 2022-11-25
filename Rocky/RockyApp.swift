@@ -13,7 +13,7 @@ struct RockyApp: App {
 
     var body: some Scene {
         WindowGroup {
-            CoreTabView()
+            LogView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }

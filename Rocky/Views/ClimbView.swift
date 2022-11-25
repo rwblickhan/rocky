@@ -12,7 +12,7 @@ struct ClimbView: View {
     @Environment(\.managedObjectContext) private var viewContext
 
     @State var expandedGrade: Grade?
-    
+
     private let impactMed = UIImpactFeedbackGenerator(style: .medium)
 
     var body: some View {

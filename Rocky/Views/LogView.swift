@@ -14,18 +14,35 @@ struct LogView: View {
         animation: .default)
     private var climbs: FetchedResults<Climb>
 
+    private var batchedClimbs: [(climbs: [Climb], timestamp: Date)] {
+        climbs.reduce(into: []) { partialResult, nextClimb in
+            let nextClimbTimestamp = nextClimb.timestamp ?? Date()
+            let climbBatchTimestamp = partialResult.last?.0.first?.timestamp ?? Date()
+            if partialResult.isEmpty || !Calendar.current.isDate(nextClimbTimestamp, inSameDayAs: climbBatchTimestamp) {
+                // Start a new batch
+                partialResult.append((climbs: [nextClimb], timestamp: nextClimbTimestamp))
+            } else {
+                // Append to the existing batch
+                partialResult[partialResult.count - 1].climbs.append(nextClimb)
+            }
+        }
+    }
+
     var body: some View {
         NavigationView {
             List {
-                ForEach(climbs) { climb in
-                    HStack {
-                        Text("\(climb.successful ? "✅" : "❌")")
-                        Text(Grade(rawValue: climb.grade)?.displayName ?? "null")
-                        Text(climb.timestamp?.formatted() ?? "null")
+                ForEach(batchedClimbs, id: \.timestamp) { batch in
+                    Section {
+                        ForEach(batch.climbs) { climb in
+                            LogClimbRowView(climb: climb)
+                        }
+                    } header: {
+                        Text(batch.timestamp.formatted(.dateTime.day().month(.wide).year()))
                     }
                 }
                 .onDelete(perform: deleteItems)
             }
+            .headerProminence(.increased)
             .navigationTitle("Climb Log")
             .toolbar { ToolbarItem(placement: .navigationBarTrailing) { EditButton() } }
         }
@@ -38,8 +55,8 @@ struct LogView: View {
             do {
                 try viewContext.save()
             } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+                // swiftlint:disable no-warnings
+                #warning("Replace this implementation with code to handle the error appropriately.")
                 let nsError = error as NSError
                 fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
             }

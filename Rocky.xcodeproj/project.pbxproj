@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CD30C5C12931534200AB4D0B /* LogClimbRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD30C5C02931534200AB4D0B /* LogClimbRowView.swift */; };
 		CD6A0DE02927148D0090258D /* RockyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6A0DDF2927148D0090258D /* RockyApp.swift */; };
 		CD6A0DE42927148E0090258D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD6A0DE32927148E0090258D /* Assets.xcassets */; };
 		CD6A0DE72927148E0090258D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD6A0DE62927148E0090258D /* Preview Assets.xcassets */; };
@@ -42,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CD30C5C02931534200AB4D0B /* LogClimbRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogClimbRowView.swift; sourceTree = "<group>"; };
 		CD6A0DDC2927148D0090258D /* Rocky.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rocky.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD6A0DDF2927148D0090258D /* RockyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RockyApp.swift; sourceTree = "<group>"; };
 		CD6A0DE32927148E0090258D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 				CD6A0E1629271C050090258D /* StatsView.swift */,
 				CD6A0E1829271C180090258D /* ClimbView.swift */,
 				CD6A0E1C292749390090258D /* GradeButtonView.swift */,
+				CD30C5C02931534200AB4D0B /* LogClimbRowView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -308,6 +311,7 @@
 				CD6A0E1D292749390090258D /* GradeButtonView.swift in Sources */,
 				CD6A0E0F292715140090258D /* Grade.swift in Sources */,
 				CD6A0E1729271C050090258D /* StatsView.swift in Sources */,
+				CD30C5C12931534200AB4D0B /* LogClimbRowView.swift in Sources */,
 				CD6A0DE02927148D0090258D /* RockyApp.swift in Sources */,
 				CD6A0E1329271B750090258D /* CoreTabView.swift in Sources */,
 				CD6A0E1529271BF80090258D /* LogView.swift in Sources */,

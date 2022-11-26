@@ -32,6 +32,7 @@ struct LogButtonsView: View {
                     gradeButtonGridView(successful: false)
                 }
             }
+            .buttonStyle(RoundedRectangleButtonStyle())
     }
 
     private var successfulLogButton: some View {
@@ -41,6 +42,7 @@ struct LogButtonsView: View {
                     gradeButtonGridView(successful: true)
                 }
             }
+            .buttonStyle(RoundedRectangleButtonStyle())
     }
 
     private func logButtonLabel(successful: Bool) -> some View {

@@ -51,11 +51,10 @@ struct LogButtonsView: View {
     }
 
     private func gradeButtonGridView(successful: Bool) -> some View {
-        GradeButtonGridView(onSelectGrade: { grade in
+        GradeButtonGridView(successful: successful) { grade in
             log(grade: grade, successful: successful)
-        })
+        }
         .presentationDetents([.medium])
-        .presentationDragIndicator(.visible)
     }
 
     private func onTapLogButton(successful: Bool) {
@@ -89,6 +88,7 @@ struct LogButtonsView: View {
 
 struct LogButtonsView_Previews: PreviewProvider {
     static var previews: some View {
+        LogButtonsView()
         LogButtonsView()
     }
 }

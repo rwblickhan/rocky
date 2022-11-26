@@ -8,18 +8,26 @@
 import SwiftUI
 
 struct GradeButtonGridView: View {
+    let successful: Bool
     let onSelectGrade: (Grade) -> Void
 
     private let impactMed = UIImpactFeedbackGenerator(style: .medium)
 
     var body: some View {
-        Grid {
-            ForEach(grades, id: \.0.id) { gradePair in
-                GridRow {
-                    GradeButtonView(grade: gradePair.0, onSelectGrade: onSelectGrade)
-                    GradeButtonView(grade: gradePair.1, onSelectGrade: onSelectGrade)
-                }
+        VStack {
+            Spacer()
+            Text(successful ? "Successful Climb" : "Unsuccessful Climb")
+                .frame(maxWidth: .infinity, alignment: .leading)
                 .padding()
+                .font(.title)
+            Grid {
+                ForEach(grades, id: \.0.id) { gradePair in
+                    GridRow {
+                        GradeButtonView(grade: gradePair.0, onSelectGrade: onSelectGrade)
+                        GradeButtonView(grade: gradePair.1, onSelectGrade: onSelectGrade)
+                    }
+                    .padding()
+                }
             }
         }
     }
@@ -36,6 +44,7 @@ struct GradeButtonGridView: View {
 
 struct GradeGridView_Previews: PreviewProvider {
     static var previews: some View {
-        GradeButtonGridView { _ in }
+        GradeButtonGridView(successful: true) { _ in }
+        GradeButtonGridView(successful: false) { _ in }
     }
 }

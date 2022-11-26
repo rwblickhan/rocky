@@ -34,9 +34,7 @@ struct LogView: View {
                 List {
                     ForEach(batchedClimbs, id: \.timestamp) { batch in
                         Section {
-                            ForEach(batch.climbs) { climb in
-                                LogClimbRowView(climb: climb)
-                            }
+                            ForEach(batch.climbs) { LogClimbRowView(climb: $0) }
                         } header: {
                             Text(batch.timestamp.formatted(.dateTime.day().month(.wide).year()))
                         }

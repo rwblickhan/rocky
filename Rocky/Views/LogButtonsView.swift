@@ -12,58 +12,53 @@ struct LogButtonsView: View {
 
     private let impactMed = UIImpactFeedbackGenerator(style: .medium)
 
-    @State private var showSheet = false
+    @State private var showSuccessfulSheet = false
+    @State private var showUnsuccessfulSheet = false
 
     var body: some View {
         HStack {
             Spacer()
-            logButton(successful: false)
+            unsuccessfulLogButton
             Spacer()
-            logButton(successful: true)
+            successfulLogButton
             Spacer()
         }
     }
 
-    @ViewBuilder
-    private func logButton(successful: Bool) -> some View {
-        Button(
-            action: {
-                impactMed.impactOccurred()
-                showSheet = true
-            },
-            label: {
-                Text(successful ? "👍" : "👎")
-                    .font(.largeTitle)
-            })
-            .sheet(isPresented: $showSheet) {
-                Grid {
-                    ForEach(grades, id: \.0.id) { gradePair in
-                        GridRow {
-                            Button(gradePair.0.displayName) { log(grade: gradePair.0, successful: successful) }
-                            Button(gradePair.1.displayName) { log(grade: gradePair.1, successful: successful) }
-                        }
-                        .padding()
-                    }
-                }
-                .presentationDetents([.medium, .large])
+    private var unsuccessfulLogButton: some View {
+        Button(action: { onTapLogButton(successful: false) }, label: { logButtonLabel(successful: false) })
+            .sheet(isPresented: $showUnsuccessfulSheet) {
+                GradeButtonGridView(onSelectGrade: { grade in
+                    log(grade: grade, successful: false)
+                })
             }
     }
 
-    private var grades: [(Grade, Grade)] {
-        let allGrades = Array(Grade.allCases.reversed())
-        var gradePairs = [(Grade, Grade)]()
-        for i in stride(from: 0, to: allGrades.count - 1, by: 2) {
-            gradePairs.append((allGrades[i], allGrades[i + 1]))
-        }
-        return gradePairs
+    private var successfulLogButton: some View {
+        Button(action: { onTapLogButton(successful: true) }, label: { logButtonLabel(successful: true) })
+            .sheet(isPresented: $showSuccessfulSheet) {
+                GradeButtonGridView(onSelectGrade: { grade in
+                    log(grade: grade, successful: true)
+                })
+            }
+    }
+
+    private func logButtonLabel(successful: Bool) -> some View {
+        Text(successful ? "👍" : "👎")
+            .font(.largeTitle)
+    }
+
+    private func onTapLogButton(successful: Bool) {
+        impactMed.impactOccurred()
+        showSuccessfulSheet = successful
+        showUnsuccessfulSheet = !successful
     }
 
     private func log(grade: Grade, successful: Bool) {
-        showSheet = false
-        let climb = saveClimb(grade: grade, successful: successful)
-    }
+        impactMed.impactOccurred()
+        showSuccessfulSheet = false
+        showUnsuccessfulSheet = false
 
-    private func saveClimb(grade: Grade, successful: Bool) -> Climb {
         withAnimation {
             let newClimb = Climb(context: viewContext)
             newClimb.grade = grade.rawValue
@@ -78,7 +73,6 @@ struct LogButtonsView: View {
                 let nsError = error as NSError
                 fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
             }
-            return newClimb
         }
     }
 }

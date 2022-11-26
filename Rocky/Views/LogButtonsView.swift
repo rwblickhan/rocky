@@ -27,12 +27,20 @@ struct LogButtonsView: View {
 
     private var unsuccessfulLogButton: some View {
         Button(action: { onTapLogButton(successful: false) }, label: { logButtonLabel(successful: false) })
-            .sheet(isPresented: $showUnsuccessfulSheet) { gradeButtonGridView(succesful: false) }
+            .sheet(isPresented: $showUnsuccessfulSheet) {
+                ScrollView {
+                    gradeButtonGridView(successful: false)
+                }
+            }
     }
 
     private var successfulLogButton: some View {
         Button(action: { onTapLogButton(successful: true) }, label: { logButtonLabel(successful: true) })
-            .sheet(isPresented: $showSuccessfulSheet) { gradeButtonGridView(succesful: true) }
+            .sheet(isPresented: $showSuccessfulSheet) {
+                ScrollView {
+                    gradeButtonGridView(successful: true)
+                }
+            }
     }
 
     private func logButtonLabel(successful: Bool) -> some View {
@@ -40,11 +48,12 @@ struct LogButtonsView: View {
             .font(.largeTitle)
     }
 
-    private func gradeButtonGridView(succesful: Bool) -> some View {
+    private func gradeButtonGridView(successful: Bool) -> some View {
         GradeButtonGridView(onSelectGrade: { grade in
-            log(grade: grade, successful: succesful)
+            log(grade: grade, successful: successful)
         })
-        .presentationDetents([.medium, .large])
+        .presentationDetents([.medium])
+        .presentationDragIndicator(.visible)
     }
 
     private func onTapLogButton(successful: Bool) {

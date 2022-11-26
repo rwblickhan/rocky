@@ -10,6 +10,8 @@
 		CD30C5C12931534200AB4D0B /* LogClimbRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD30C5C02931534200AB4D0B /* LogClimbRowView.swift */; };
 		CD30C5C329316E7E00AB4D0B /* LogButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD30C5C229316E7E00AB4D0B /* LogButtonsView.swift */; };
 		CD30C5C5293193B300AB4D0B /* GradeButtonGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD30C5C4293193B300AB4D0B /* GradeButtonGridView.swift */; };
+		CD30C5C72931983700AB4D0B /* GradeButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD30C5C62931983700AB4D0B /* GradeButtonView.swift */; };
+		CD30C5CB29319D0500AB4D0B /* RoundedRectangleButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD30C5CA29319D0500AB4D0B /* RoundedRectangleButtonStyle.swift */; };
 		CD6A0DE02927148D0090258D /* RockyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6A0DDF2927148D0090258D /* RockyApp.swift */; };
 		CD6A0DE42927148E0090258D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD6A0DE32927148E0090258D /* Assets.xcassets */; };
 		CD6A0DE72927148E0090258D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD6A0DE62927148E0090258D /* Preview Assets.xcassets */; };
@@ -44,6 +46,8 @@
 		CD30C5C02931534200AB4D0B /* LogClimbRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogClimbRowView.swift; sourceTree = "<group>"; };
 		CD30C5C229316E7E00AB4D0B /* LogButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogButtonsView.swift; sourceTree = "<group>"; };
 		CD30C5C4293193B300AB4D0B /* GradeButtonGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeButtonGridView.swift; sourceTree = "<group>"; };
+		CD30C5C62931983700AB4D0B /* GradeButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeButtonView.swift; sourceTree = "<group>"; };
+		CD30C5CA29319D0500AB4D0B /* RoundedRectangleButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedRectangleButtonStyle.swift; sourceTree = "<group>"; };
 		CD6A0DDC2927148D0090258D /* Rocky.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rocky.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD6A0DDF2927148D0090258D /* RockyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RockyApp.swift; sourceTree = "<group>"; };
 		CD6A0DE32927148E0090258D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -114,6 +118,7 @@
 				CD6A0DE32927148E0090258D /* Assets.xcassets */,
 				CD6A0DE82927148E0090258D /* Persistence.swift */,
 				CD6A0DE52927148E0090258D /* Preview Content */,
+				CD30C5CA29319D0500AB4D0B /* RoundedRectangleButtonStyle.swift */,
 			);
 			path = Rocky;
 			sourceTree = "<group>";
@@ -160,6 +165,7 @@
 				CD30C5C02931534200AB4D0B /* LogClimbRowView.swift */,
 				CD30C5C229316E7E00AB4D0B /* LogButtonsView.swift */,
 				CD30C5C4293193B300AB4D0B /* GradeButtonGridView.swift */,
+				CD30C5C62931983700AB4D0B /* GradeButtonView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -303,7 +309,9 @@
 				CD30C5C5293193B300AB4D0B /* GradeButtonGridView.swift in Sources */,
 				CD6A0DEC2927148E0090258D /* Rocky.xcdatamodeld in Sources */,
 				CD30C5C329316E7E00AB4D0B /* LogButtonsView.swift in Sources */,
+				CD30C5C72931983700AB4D0B /* GradeButtonView.swift in Sources */,
 				CD6A0E0F292715140090258D /* Grade.swift in Sources */,
+				CD30C5CB29319D0500AB4D0B /* RoundedRectangleButtonStyle.swift in Sources */,
 				CD6A0E1729271C050090258D /* StatsView.swift in Sources */,
 				CD30C5C12931534200AB4D0B /* LogClimbRowView.swift in Sources */,
 				CD6A0DE02927148D0090258D /* RockyApp.swift in Sources */,

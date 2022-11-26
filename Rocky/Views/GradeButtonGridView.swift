@@ -16,8 +16,8 @@ struct GradeButtonGridView: View {
         Grid {
             ForEach(grades, id: \.0.id) { gradePair in
                 GridRow {
-                    gradeButton(grade: gradePair.0)
-                    gradeButton(grade: gradePair.1)
+                    GradeButtonView(grade: gradePair.0, onSelectGrade: onSelectGrade)
+                    GradeButtonView(grade: gradePair.1, onSelectGrade: onSelectGrade)
                 }
                 .padding()
             }
@@ -31,11 +31,6 @@ struct GradeButtonGridView: View {
             gradePairs.append((allGrades[i], allGrades[i + 1]))
         }
         return gradePairs
-    }
-
-    @ViewBuilder
-    private func gradeButton(grade: Grade) -> some View {
-        Button(grade.displayName) { onSelectGrade(grade) }
     }
 }
 

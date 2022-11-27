@@ -45,11 +45,10 @@ struct LogView: View {
                 .navigationTitle("Climb Log")
                 .toolbar {
                     if !climbs.isEmpty {
-                        ToolbarItem(placement: .navigationBarLeading) { EditButton().foregroundColor(.purple) }
+                        ToolbarItem(placement: .navigationBarLeading) { EditButton() }
                     }
                     ToolbarItem(placement: .navigationBarTrailing) { NavigationLink(destination: StatsView(), label: {
                         Text("Stats")
-                            .foregroundColor(.purple)
                     })
                     }
                 }

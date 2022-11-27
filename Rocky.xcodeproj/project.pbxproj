@@ -12,6 +12,7 @@
 		CD30C5C5293193B300AB4D0B /* GradeButtonGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD30C5C4293193B300AB4D0B /* GradeButtonGridView.swift */; };
 		CD30C5C72931983700AB4D0B /* GradeButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD30C5C62931983700AB4D0B /* GradeButtonView.swift */; };
 		CD30C5CB29319D0500AB4D0B /* RoundedRectangleButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD30C5CA29319D0500AB4D0B /* RoundedRectangleButtonStyle.swift */; };
+		CD30C5CE293424F500AB4D0B /* Sentry in Frameworks */ = {isa = PBXBuildFile; productRef = CD30C5CD293424F500AB4D0B /* Sentry */; };
 		CD6A0DE02927148D0090258D /* RockyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6A0DDF2927148D0090258D /* RockyApp.swift */; };
 		CD6A0DE42927148E0090258D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD6A0DE32927148E0090258D /* Assets.xcassets */; };
 		CD6A0DE72927148E0090258D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD6A0DE62927148E0090258D /* Preview Assets.xcassets */; };
@@ -69,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD30C5CE293424F500AB4D0B /* Sentry in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -187,6 +189,7 @@
 			);
 			name = Rocky;
 			packageProductDependencies = (
+				CD30C5CD293424F500AB4D0B /* Sentry */,
 			);
 			productName = Rocky;
 			productReference = CD6A0DDC2927148D0090258D /* Rocky.app */;
@@ -262,6 +265,7 @@
 			mainGroup = CD6A0DD32927148D0090258D;
 			packageReferences = (
 				CD6A0E1E292875010090258D /* XCRemoteSwiftPackageReference "Drops" */,
+				CD30C5CC293424F500AB4D0B /* XCRemoteSwiftPackageReference "sentry-cocoa" */,
 			);
 			productRefGroup = CD6A0DDD2927148D0090258D /* Products */;
 			projectDirPath = "";
@@ -642,6 +646,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		CD30C5CC293424F500AB4D0B /* XCRemoteSwiftPackageReference "sentry-cocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/getsentry/sentry-cocoa.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
 		CD6A0E1E292875010090258D /* XCRemoteSwiftPackageReference "Drops" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/omaralbeik/Drops.git";
@@ -651,6 +663,14 @@
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CD30C5CD293424F500AB4D0B /* Sentry */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CD30C5CC293424F500AB4D0B /* XCRemoteSwiftPackageReference "sentry-cocoa" */;
+			productName = Sentry;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		CD6A0DEA2927148E0090258D /* Rocky.xcdatamodeld */ = {

@@ -20,7 +20,7 @@ struct LogView: View {
         let id = UUID()
     }
 
-    private var batchedClimbs: [DaySection] {
+    private var sections: [DaySection] {
         climbs.reduce(into: []) { partialResult, nextClimb in
             let nextClimbTimestamp = nextClimb.timestamp ?? Date()
             let climbBatchTimestamp = partialResult.last?.climbs.first?.timestamp ?? Date()
@@ -38,11 +38,9 @@ struct LogView: View {
         NavigationView {
             VStack {
                 List {
-                    ForEach(batchedClimbs) { batch in
-                        Section {
-                            ForEach(batch.climbs) { LogClimbRowView(climb: $0) }
-                        } header: {
-                            Text(batch.timestamp.formatted(.dateTime.day().month(.wide).year()))
+                    ForEach(sections) { section in
+                        Section(header: Text(section.timestamp.formatted(.dateTime.day().month(.wide).year()))) {
+                            ForEach(section.climbs) { LogClimbRowView(climb: $0) }
                         }
                     }
                     .onDelete(perform: deleteItems)

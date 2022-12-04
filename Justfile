@@ -6,6 +6,3 @@ mint: brew
 
 lint: mint
     mint run swiftformat . && mint run swiftlint
-
-open:
-    open EmomTimer.xcodeproj

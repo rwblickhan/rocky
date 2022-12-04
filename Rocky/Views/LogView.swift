@@ -14,13 +14,19 @@ struct LogView: View {
         animation: .default)
     private var climbs: FetchedResults<Climb>
 
-    private var batchedClimbs: [(climbs: [Climb], timestamp: Date)] {
+    private struct DaySection: Identifiable {
+        var climbs: [Climb]
+        let timestamp: Date
+        let id = UUID()
+    }
+
+    private var batchedClimbs: [DaySection] {
         climbs.reduce(into: []) { partialResult, nextClimb in
             let nextClimbTimestamp = nextClimb.timestamp ?? Date()
-            let climbBatchTimestamp = partialResult.last?.0.first?.timestamp ?? Date()
+            let climbBatchTimestamp = partialResult.last?.climbs.first?.timestamp ?? Date()
             if partialResult.isEmpty || !Calendar.current.isDate(nextClimbTimestamp, inSameDayAs: climbBatchTimestamp) {
                 // Start a new batch
-                partialResult.append((climbs: [nextClimb], timestamp: nextClimbTimestamp))
+                partialResult.append(DaySection(climbs: [nextClimb], timestamp: nextClimbTimestamp))
             } else {
                 // Append to the existing batch
                 partialResult[partialResult.count - 1].climbs.append(nextClimb)
@@ -32,7 +38,7 @@ struct LogView: View {
         NavigationView {
             VStack {
                 List {
-                    ForEach(batchedClimbs, id: \.timestamp) { batch in
+                    ForEach(batchedClimbs) { batch in
                         Section {
                             ForEach(batch.climbs) { LogClimbRowView(climb: $0) }
                         } header: {

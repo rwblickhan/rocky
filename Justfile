@@ -4,5 +4,5 @@ brew:
 mint: brew
     mint bootstrap
 
-lint: mint
+lint:
     mint run swiftformat . && mint run swiftlint

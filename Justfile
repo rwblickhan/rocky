@@ -1,3 +1,5 @@
+alias l := lint
+
 brew:
     brew install mint
 

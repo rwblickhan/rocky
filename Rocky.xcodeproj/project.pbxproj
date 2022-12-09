@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CD0BD2AB2942CB01004FBE13 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0BD2AA2942CB01004FBE13 /* SettingsView.swift */; };
 		CD30C5C12931534200AB4D0B /* LogClimbRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD30C5C02931534200AB4D0B /* LogClimbRowView.swift */; };
 		CD30C5C329316E7E00AB4D0B /* LogButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD30C5C229316E7E00AB4D0B /* LogButtonsView.swift */; };
 		CD30C5C5293193B300AB4D0B /* GradeButtonGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD30C5C4293193B300AB4D0B /* GradeButtonGridView.swift */; };
@@ -44,6 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CD0BD2AA2942CB01004FBE13 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		CD30C5C02931534200AB4D0B /* LogClimbRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogClimbRowView.swift; sourceTree = "<group>"; };
 		CD30C5C229316E7E00AB4D0B /* LogButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogButtonsView.swift; sourceTree = "<group>"; };
 		CD30C5C4293193B300AB4D0B /* GradeButtonGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeButtonGridView.swift; sourceTree = "<group>"; };
@@ -168,6 +170,7 @@
 				CD30C5C229316E7E00AB4D0B /* LogButtonsView.swift */,
 				CD30C5C4293193B300AB4D0B /* GradeButtonGridView.swift */,
 				CD30C5C62931983700AB4D0B /* GradeButtonView.swift */,
+				CD0BD2AA2942CB01004FBE13 /* SettingsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -318,6 +321,7 @@
 				CD30C5CB29319D0500AB4D0B /* RoundedRectangleButtonStyle.swift in Sources */,
 				CD6A0E1729271C050090258D /* StatsView.swift in Sources */,
 				CD30C5C12931534200AB4D0B /* LogClimbRowView.swift in Sources */,
+				CD0BD2AB2942CB01004FBE13 /* SettingsView.swift in Sources */,
 				CD6A0DE02927148D0090258D /* RockyApp.swift in Sources */,
 				CD6A0E1529271BF80090258D /* LogView.swift in Sources */,
 			);

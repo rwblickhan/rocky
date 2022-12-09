@@ -51,9 +51,15 @@ struct LogView: View {
                     if !climbs.isEmpty {
                         ToolbarItem(placement: .navigationBarLeading) { EditButton() }
                     }
-                    ToolbarItem(placement: .navigationBarTrailing) { NavigationLink(destination: StatsView(), label: {
-                        Text("Stats")
-                    })
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        NavigationLink(destination: StatsView(), label: {
+                            Text("Stats")
+                        })
+                    }
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        NavigationLink(destination: SettingsView(), label: {
+                            Image(systemName: "gear")
+                        })
                     }
                 }
                 Divider()

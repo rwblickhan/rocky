@@ -25,6 +25,7 @@
 		CD6A0E0F292715140090258D /* Grade.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6A0E0E292715140090258D /* Grade.swift */; };
 		CD6A0E1529271BF80090258D /* LogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6A0E1429271BF80090258D /* LogView.swift */; };
 		CD6A0E1729271C050090258D /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6A0E1629271C050090258D /* StatsView.swift */; };
+		CD851EE9294AE3BB00E1C2B6 /* DayClimbBatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD851EE8294AE3BB00E1C2B6 /* DayClimbBatch.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		CD6A0E0E292715140090258D /* Grade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grade.swift; sourceTree = "<group>"; };
 		CD6A0E1429271BF80090258D /* LogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogView.swift; sourceTree = "<group>"; };
 		CD6A0E1629271C050090258D /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
+		CD851EE8294AE3BB00E1C2B6 /* DayClimbBatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayClimbBatch.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +159,7 @@
 			children = (
 				CD6A0DEA2927148E0090258D /* Rocky.xcdatamodeld */,
 				CD6A0E0E292715140090258D /* Grade.swift */,
+				CD851EE8294AE3BB00E1C2B6 /* DayClimbBatch.swift */,
 			);
 			path = "Data Model";
 			sourceTree = "<group>";
@@ -318,6 +321,7 @@
 				CD30C5C329316E7E00AB4D0B /* LogButtonsView.swift in Sources */,
 				CD30C5C72931983700AB4D0B /* GradeButtonView.swift in Sources */,
 				CD6A0E0F292715140090258D /* Grade.swift in Sources */,
+				CD851EE9294AE3BB00E1C2B6 /* DayClimbBatch.swift in Sources */,
 				CD30C5CB29319D0500AB4D0B /* RoundedRectangleButtonStyle.swift in Sources */,
 				CD6A0E1729271C050090258D /* StatsView.swift in Sources */,
 				CD30C5C12931534200AB4D0B /* LogClimbRowView.swift in Sources */,

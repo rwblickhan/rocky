@@ -14,33 +14,13 @@ struct LogView: View {
         animation: .default)
     private var climbs: FetchedResults<Climb>
 
-    private struct DaySection: Identifiable {
-        var climbs: [Climb]
-        let timestamp: Date
-        let id = UUID()
-    }
-
-    private var sections: [DaySection] {
-        climbs.reduce(into: []) { partialResult, nextClimb in
-            let nextClimbTimestamp = nextClimb.timestamp ?? Date()
-            let climbBatchTimestamp = partialResult.last?.climbs.first?.timestamp ?? Date()
-            if partialResult.isEmpty || !Calendar.current.isDate(nextClimbTimestamp, inSameDayAs: climbBatchTimestamp) {
-                // Start a new batch
-                partialResult.append(DaySection(climbs: [nextClimb], timestamp: nextClimbTimestamp))
-            } else {
-                // Append to the existing batch
-                partialResult[partialResult.count - 1].climbs.append(nextClimb)
-            }
-        }
-    }
-
     var body: some View {
         NavigationView {
             VStack {
                 List {
-                    ForEach(sections) { section in
-                        Section(header: Text(section.timestamp.formatted(.dateTime.day().month(.wide).year()))) {
-                            ForEach(section.climbs) { LogClimbRowView(climb: $0) }
+                    ForEach(climbs.batched) { batch in
+                        Section(header: Text(batch.timestamp.formatted(.dateTime.day().month(.wide).year()))) {
+                            ForEach(batch.climbs) { LogClimbRowView(climb: $0) }
                         }
                     }
                     .onDelete(perform: deleteItems)

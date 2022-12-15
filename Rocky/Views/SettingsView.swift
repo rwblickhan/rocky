@@ -9,7 +9,15 @@ import SwiftUI
 
 struct SettingsView: View {
     var body: some View {
-        Text("Settings")
+        List {
+            Section {
+                ForEach(Grade.allCases) { grade in
+                    GradePinToggleView(grade: grade)
+                }
+            } header: {
+                Text("Pinned Grades")
+            }
+        }
     }
 }
 

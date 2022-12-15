@@ -10,6 +10,8 @@ import SwiftUI
 struct GradeButtonGridView: View {
     let successful: Bool
     let onSelectGrade: (Grade) -> Void
+    
+    let userDefaults = UserDefaults.standard
 
     private let impactMed = UIImpactFeedbackGenerator(style: .medium)
 
@@ -24,7 +26,9 @@ struct GradeButtonGridView: View {
                 ForEach(grades, id: \.0.id) { gradePair in
                     GridRow {
                         GradeButtonView(grade: gradePair.0, onSelectGrade: onSelectGrade)
-                        GradeButtonView(grade: gradePair.1, onSelectGrade: onSelectGrade)
+                        if let secondGrade = gradePair.1 {
+                            GradeButtonView(grade: secondGrade, onSelectGrade: onSelectGrade)
+                        }
                     }
                     .padding()
                 }
@@ -32,11 +36,17 @@ struct GradeButtonGridView: View {
         }
     }
 
-    private var grades: [(Grade, Grade)] {
-        let allGrades = Array(Grade.allCases.reversed())
-        var gradePairs = [(Grade, Grade)]()
-        for i in stride(from: 0, to: allGrades.count - 1, by: 2) {
-            gradePairs.append((allGrades[i], allGrades[i + 1]))
+    private var grades: [(Grade, Grade?)] {
+        let visibleGrades = Array(Grade.allCases.filter({
+            userDefaults.value(forKey: $0.userDefaultsString) as? Bool ?? true
+        }).reversed())
+        var gradePairs = [(Grade, Grade?)]()
+        for i in stride(from: 0, to: visibleGrades.count, by: 2) {
+            if i + 1 >= visibleGrades.count {
+                gradePairs.append((visibleGrades[i], nil))
+            } else {
+                gradePairs.append((visibleGrades[i], visibleGrades[i + 1]))
+            }
         }
         return gradePairs
     }

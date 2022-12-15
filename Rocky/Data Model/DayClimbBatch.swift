@@ -5,8 +5,8 @@
 //  Created by Russell Blickhan on 12/14/22.
 //
 
-import SwiftUI
 import Foundation
+import SwiftUI
 
 struct DayClimbBatch: Identifiable {
     var climbs: [Climb]

@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum Grade: Int16, CaseIterable, Identifiable {
+enum Grade: Int16, CaseIterable, Identifiable, Codable {
     case vb
     case v0
     case v1
@@ -39,4 +39,8 @@ enum Grade: Int16, CaseIterable, Identifiable {
     }
 
     var id: Int16 { rawValue }
+    
+    var userDefaultsString: String {
+        "\(displayName)_isPinned"
+    }
 }

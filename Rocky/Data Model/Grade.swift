@@ -39,7 +39,7 @@ enum Grade: Int16, CaseIterable, Identifiable, Codable {
     }
 
     var id: Int16 { rawValue }
-    
+
     var userDefaultsString: String {
         "\(displayName)_isPinned"
     }

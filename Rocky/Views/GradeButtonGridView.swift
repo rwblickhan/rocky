@@ -10,7 +10,7 @@ import SwiftUI
 struct GradeButtonGridView: View {
     let successful: Bool
     let onSelectGrade: (Grade) -> Void
-    
+
     let userDefaults = UserDefaults.standard
 
     private let impactMed = UIImpactFeedbackGenerator(style: .medium)
@@ -37,9 +37,9 @@ struct GradeButtonGridView: View {
     }
 
     private var grades: [(Grade, Grade?)] {
-        let visibleGrades = Array(Grade.allCases.filter({
+        let visibleGrades = Array(Grade.allCases.filter {
             userDefaults.value(forKey: $0.userDefaultsString) as? Bool ?? true
-        }).reversed())
+        }.reversed())
         var gradePairs = [(Grade, Grade?)]()
         for i in stride(from: 0, to: visibleGrades.count, by: 2) {
             if i + 1 >= visibleGrades.count {

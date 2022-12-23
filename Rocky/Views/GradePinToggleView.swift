@@ -12,10 +12,10 @@ struct GradePinToggleView: View {
     private let userDefaults = UserDefaults.standard
 
     @State private var isOn: Bool
-    
+
     init(grade: Grade) {
         self.grade = grade
-        self.isOn = userDefaults.value(forKey: grade.userDefaultsString) as? Bool ?? true
+        isOn = userDefaults.value(forKey: grade.userDefaultsString) as? Bool ?? true
     }
 
     var body: some View {

@@ -5,15 +5,15 @@
 //  Created by Russell Blickhan on 11/17/22.
 //
 
-import SwiftUI
 import Charts
+import SwiftUI
 
 struct StatsView: View {
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Climb.timestamp, ascending: false)],
         animation: .default)
     private var climbs: FetchedResults<Climb>
-    
+
     var body: some View {
         ScrollView {
             Text("Climbs per session")

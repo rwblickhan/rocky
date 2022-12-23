@@ -12,17 +12,17 @@ struct DayClimbBatch: Identifiable {
     var climbs: [Climb]
     let timestamp: Date
     let id = UUID()
-    
+
     var successfulClimbs: [Climb] {
         climbs.filter(\.successful)
     }
-    
+
     var unsuccessfulClimbs: [Climb] {
         climbs.filter { !$0.successful }
     }
-    
+
     var successRate: Float {
-        Float(successfulClimbs.count) / Float((successfulClimbs.count + unsuccessfulClimbs.count))
+        Float(successfulClimbs.count) / Float(successfulClimbs.count + unsuccessfulClimbs.count)
     }
 }
 

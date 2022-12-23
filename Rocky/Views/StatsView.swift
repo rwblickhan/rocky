@@ -6,10 +6,34 @@
 //
 
 import SwiftUI
+import Charts
 
 struct StatsView: View {
+    @FetchRequest(
+        sortDescriptors: [NSSortDescriptor(keyPath: \Climb.timestamp, ascending: false)],
+        animation: .default)
+    private var climbs: FetchedResults<Climb>
+    
     var body: some View {
-        Text("Coming Soon")
+        ScrollView {
+            Text("Climbs per session")
+            Chart(climbs.batched) {
+                LineMark(
+                    x: .value("Date", $0.timestamp),
+                    y: .value("Number of climbs", $0.climbs.count))
+            }
+            .chartXAxisLabel("Date")
+            .chartYAxisLabel("Climbs")
+            Text("Successful climb ratio per session")
+            Chart(climbs.batched) {
+                LineMark(
+                    x: .value("Date", $0.timestamp),
+                    y: .value("Ratio of successful climbs", $0.successRate))
+            }
+            .chartXAxisLabel("Date")
+            .chartYAxisLabel("Success ratio")
+        }
+        .padding()
     }
 }
 

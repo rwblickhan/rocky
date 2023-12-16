@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LogButtonsView: View {
-    @Environment(\.managedObjectContext) private var viewContext
+    @Environment(\.modelContext) private var modelContext
 
     private let impactMed = UIImpactFeedbackGenerator(style: .medium)
 
@@ -69,19 +69,8 @@ struct LogButtonsView: View {
         showUnsuccessfulSheet = false
 
         withAnimation {
-            let newClimb = Climb(context: viewContext)
-            newClimb.grade = grade.rawValue
-            newClimb.successful = successful
-            newClimb.timestamp = Date()
-
-            do {
-                try viewContext.save()
-            } catch {
-                // swiftlint:disable no-warnings
-                #warning("Replace this implementation with code to handle the error appropriately.")
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-            }
+            let newClimb = Climb(grade: grade.rawValue, successful: successful, timestamp: Date())
+            modelContext.insert(newClimb)
         }
     }
 }

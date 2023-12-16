@@ -14,13 +14,13 @@ struct LogClimbRowView: View {
         HStack {
             Text("\(climb.successful ? "✅" : "❌")")
             Text(Grade(rawValue: climb.grade)?.displayName ?? "null")
-            Text(climb.timestamp?.formatted() ?? "null")
+            Text(climb.timestamp.formatted())
         }
     }
 }
 
 struct LogClimbRowView_Previews: PreviewProvider {
     static var previews: some View {
-        LogClimbRowView(climb: Climb())
+        LogClimbRowView(climb: Climb(grade: 0, successful: true, timestamp: Date()))
     }
 }

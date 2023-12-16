@@ -7,12 +7,11 @@
 
 import Charts
 import SwiftUI
+import SwiftData
 
 struct StatsView: View {
-    @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Climb.timestamp, ascending: false)],
-        animation: .default)
-    private var climbs: FetchedResults<Climb>
+    @Query(sort: [SortDescriptor(\Climb.timestamp, order: .reverse)], animation: .default)
+    private var climbs: [Climb]
 
     var body: some View {
         ScrollView {
@@ -24,6 +23,7 @@ struct StatsView: View {
             }
             .chartXAxisLabel("Date")
             .chartYAxisLabel("Climbs")
+            .chartScrollableAxes(.horizontal)
             Text("Successful climb ratio per session")
             Chart(climbs.batched) {
                 LineMark(
@@ -32,6 +32,7 @@ struct StatsView: View {
             }
             .chartXAxisLabel("Date")
             .chartYAxisLabel("Success ratio")
+            .chartScrollableAxes(.horizontal)
         }
         .padding()
     }

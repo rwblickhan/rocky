@@ -6,13 +6,13 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct LogView: View {
-    @Environment(\.managedObjectContext) private var viewContext
-    @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Climb.timestamp, ascending: false)],
-        animation: .default)
-    private var climbs: FetchedResults<Climb>
+    @Environment(\.modelContext) private var modelContext
+    
+    @Query(sort: [SortDescriptor(\Climb.timestamp, order: .reverse)], animation: .default)
+    private var climbs: [Climb]
 
     var body: some View {
         NavigationView {
@@ -51,16 +51,7 @@ struct LogView: View {
 
     private func deleteItems(offsets: IndexSet) {
         withAnimation {
-            offsets.map { climbs[$0] }.forEach(viewContext.delete)
-
-            do {
-                try viewContext.save()
-            } catch {
-                // swiftlint:disable no-warnings
-                #warning("Replace this implementation with code to handle the error appropriately.")
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-            }
+            offsets.map { climbs[$0] }.forEach(modelContext.delete)
         }
     }
 }
@@ -68,6 +59,5 @@ struct LogView: View {
 struct LogView_Previews: PreviewProvider {
     static var previews: some View {
         LogView()
-            .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }

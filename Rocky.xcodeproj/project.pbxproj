@@ -14,11 +14,10 @@
 		CD30C5C72931983700AB4D0B /* GradeButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD30C5C62931983700AB4D0B /* GradeButtonView.swift */; };
 		CD30C5CB29319D0500AB4D0B /* RoundedRectangleButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD30C5CA29319D0500AB4D0B /* RoundedRectangleButtonStyle.swift */; };
 		CD30C5CE293424F500AB4D0B /* Sentry in Frameworks */ = {isa = PBXBuildFile; productRef = CD30C5CD293424F500AB4D0B /* Sentry */; };
+		CD61BD0D2B2D723C00FC504D /* Climb.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD61BD0C2B2D723C00FC504D /* Climb.swift */; };
 		CD6A0DE02927148D0090258D /* RockyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6A0DDF2927148D0090258D /* RockyApp.swift */; };
 		CD6A0DE42927148E0090258D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD6A0DE32927148E0090258D /* Assets.xcassets */; };
 		CD6A0DE72927148E0090258D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD6A0DE62927148E0090258D /* Preview Assets.xcassets */; };
-		CD6A0DE92927148E0090258D /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6A0DE82927148E0090258D /* Persistence.swift */; };
-		CD6A0DEC2927148E0090258D /* Rocky.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CD6A0DEA2927148E0090258D /* Rocky.xcdatamodeld */; };
 		CD6A0DF62927148F0090258D /* RockyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6A0DF52927148F0090258D /* RockyTests.swift */; };
 		CD6A0E002927148F0090258D /* RockyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6A0DFF2927148F0090258D /* RockyUITests.swift */; };
 		CD6A0E022927148F0090258D /* RockyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6A0E012927148F0090258D /* RockyUITestsLaunchTests.swift */; };
@@ -53,12 +52,11 @@
 		CD30C5C4293193B300AB4D0B /* GradeButtonGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeButtonGridView.swift; sourceTree = "<group>"; };
 		CD30C5C62931983700AB4D0B /* GradeButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeButtonView.swift; sourceTree = "<group>"; };
 		CD30C5CA29319D0500AB4D0B /* RoundedRectangleButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedRectangleButtonStyle.swift; sourceTree = "<group>"; };
+		CD61BD0C2B2D723C00FC504D /* Climb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Climb.swift; sourceTree = "<group>"; };
 		CD6A0DDC2927148D0090258D /* Rocky.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rocky.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD6A0DDF2927148D0090258D /* RockyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RockyApp.swift; sourceTree = "<group>"; };
 		CD6A0DE32927148E0090258D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CD6A0DE62927148E0090258D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		CD6A0DE82927148E0090258D /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
-		CD6A0DEB2927148E0090258D /* Rocky.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Rocky.xcdatamodel; sourceTree = "<group>"; };
 		CD6A0DF12927148F0090258D /* RockyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RockyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD6A0DF52927148F0090258D /* RockyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RockyTests.swift; sourceTree = "<group>"; };
 		CD6A0DFB2927148F0090258D /* RockyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RockyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -124,7 +122,6 @@
 				CD6A0E10292715B50090258D /* Data Model */,
 				CD6A0DDF2927148D0090258D /* RockyApp.swift */,
 				CD6A0DE32927148E0090258D /* Assets.xcassets */,
-				CD6A0DE82927148E0090258D /* Persistence.swift */,
 				CD6A0DE52927148E0090258D /* Preview Content */,
 				CD30C5CA29319D0500AB4D0B /* RoundedRectangleButtonStyle.swift */,
 			);
@@ -159,7 +156,7 @@
 		CD6A0E10292715B50090258D /* Data Model */ = {
 			isa = PBXGroup;
 			children = (
-				CD6A0DEA2927148E0090258D /* Rocky.xcdatamodeld */,
+				CD61BD0C2B2D723C00FC504D /* Climb.swift */,
 				CD6A0E0E292715140090258D /* Grade.swift */,
 				CD851EE8294AE3BB00E1C2B6 /* DayClimbBatch.swift */,
 			);
@@ -248,7 +245,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1400;
-				LastUpgradeCheck = 1400;
+				LastUpgradeCheck = 1510;
 				TargetAttributes = {
 					CD6A0DDB2927148D0090258D = {
 						CreatedOnToolsVersion = 14.0.1;
@@ -318,10 +315,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CD6A0DE92927148E0090258D /* Persistence.swift in Sources */,
+				CD61BD0D2B2D723C00FC504D /* Climb.swift in Sources */,
 				CD30C5C5293193B300AB4D0B /* GradeButtonGridView.swift in Sources */,
 				CD851EF3294AEE7900E1C2B6 /* GradePinToggleView.swift in Sources */,
-				CD6A0DEC2927148E0090258D /* Rocky.xcdatamodeld in Sources */,
 				CD30C5C329316E7E00AB4D0B /* LogButtonsView.swift in Sources */,
 				CD30C5C72931983700AB4D0B /* GradeButtonView.swift in Sources */,
 				CD6A0E0F292715140090258D /* Grade.swift in Sources */,
@@ -404,6 +400,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -464,6 +461,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -498,6 +496,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -527,6 +526,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -683,19 +683,6 @@
 			productName = Sentry;
 		};
 /* End XCSwiftPackageProductDependency section */
-
-/* Begin XCVersionGroup section */
-		CD6A0DEA2927148E0090258D /* Rocky.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				CD6A0DEB2927148E0090258D /* Rocky.xcdatamodel */,
-			);
-			currentVersion = CD6A0DEB2927148E0090258D /* Rocky.xcdatamodel */;
-			path = Rocky.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = CD6A0DD42927148D0090258D /* Project object */;
 }

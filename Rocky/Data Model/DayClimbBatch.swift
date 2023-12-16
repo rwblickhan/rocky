@@ -26,10 +26,10 @@ struct DayClimbBatch: Identifiable {
     }
 }
 
-extension FetchedResults<Climb> {
+extension Array<Climb> {
     var batched: [DayClimbBatch] {
         reduce(into: []) { partialResult, nextClimb in
-            let nextClimbTimestamp = nextClimb.timestamp ?? Date()
+            let nextClimbTimestamp = nextClimb.timestamp
             let climbBatchTimestamp = partialResult.last?.climbs.first?.timestamp ?? Date()
             if partialResult.isEmpty || !Calendar.current.isDate(nextClimbTimestamp, inSameDayAs: climbBatchTimestamp) {
                 // Start a new batch

@@ -20,9 +20,9 @@ struct GradePinToggleView: View {
 
     var body: some View {
         Toggle(grade.displayName, isOn: $isOn)
-            .onChange(of: isOn) {
-                userDefaults.set($0, forKey: grade.userDefaultsString)
-            }
+            .onChange(of: isOn, { oldValue, newValue in
+                userDefaults.set(newValue, forKey: grade.userDefaultsString)
+            })
     }
 }
 

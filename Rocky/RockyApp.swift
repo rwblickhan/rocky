@@ -10,8 +10,6 @@ import SwiftUI
 
 @main
 struct RockyApp: App {
-    let persistenceController = PersistenceController.shared
-
     init() {
         SentrySDK.start { options in
             options
@@ -29,7 +27,7 @@ struct RockyApp: App {
     var body: some Scene {
         WindowGroup {
             LogView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                .modelContainer(for: Climb.self)
         }
     }
 }

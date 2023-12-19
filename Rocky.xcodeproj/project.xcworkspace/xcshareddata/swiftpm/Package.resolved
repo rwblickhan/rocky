@@ -1,21 +1,12 @@
 {
   "pins" : [
     {
-      "identity" : "drops",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/omaralbeik/Drops.git",
-      "state" : {
-        "revision" : "f4eabe3e4e5da69e5205a69a5ddc0effd4a90519",
-        "version" : "1.6.1"
-      }
-    },
-    {
       "identity" : "sentry-cocoa",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/getsentry/sentry-cocoa.git",
       "state" : {
-        "revision" : "9cc3b7374bf96db5898562938c00a4f9f11023e7",
-        "version" : "7.31.2"
+        "revision" : "cf43eac1aa12017868c257ad3854ad87a5de0758",
+        "version" : "7.31.5"
       }
     }
   ],

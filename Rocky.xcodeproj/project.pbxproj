@@ -53,7 +53,7 @@
 		CD30C5C62931983700AB4D0B /* GradeButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeButtonView.swift; sourceTree = "<group>"; };
 		CD30C5CA29319D0500AB4D0B /* RoundedRectangleButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedRectangleButtonStyle.swift; sourceTree = "<group>"; };
 		CD61BD0C2B2D723C00FC504D /* Climb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Climb.swift; sourceTree = "<group>"; };
-		CD6A0DDC2927148D0090258D /* Rocky.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rocky.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD6A0DDC2927148D0090258D /* RockyDebug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RockyDebug.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD6A0DDF2927148D0090258D /* RockyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RockyApp.swift; sourceTree = "<group>"; };
 		CD6A0DE32927148E0090258D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CD6A0DE62927148E0090258D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -108,7 +108,7 @@
 		CD6A0DDD2927148D0090258D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CD6A0DDC2927148D0090258D /* Rocky.app */,
+				CD6A0DDC2927148D0090258D /* RockyDebug.app */,
 				CD6A0DF12927148F0090258D /* RockyTests.xctest */,
 				CD6A0DFB2927148F0090258D /* RockyUITests.xctest */,
 			);
@@ -198,7 +198,7 @@
 				CD30C5CD293424F500AB4D0B /* Sentry */,
 			);
 			productName = Rocky;
-			productReference = CD6A0DDC2927148D0090258D /* Rocky.app */;
+			productReference = CD6A0DDC2927148D0090258D /* RockyDebug.app */;
 			productType = "com.apple.product-type.application";
 		};
 		CD6A0DF02927148F0090258D /* RockyTests */ = {
@@ -270,7 +270,6 @@
 			);
 			mainGroup = CD6A0DD32927148D0090258D;
 			packageReferences = (
-				CD6A0E1E292875010090258D /* XCRemoteSwiftPackageReference "Drops" */,
 				CD30C5CC293424F500AB4D0B /* XCRemoteSwiftPackageReference "sentry-cocoa" */,
 			);
 			productRefGroup = CD6A0DDD2927148D0090258D /* Products */;
@@ -415,7 +414,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -470,7 +469,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -502,8 +501,8 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = org.rwblickhan.Rocky;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = org.rwblickhan.RockyDebug;
+				PRODUCT_NAME = "$(TARGET_NAME)Debug";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -664,14 +663,6 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 7.0.0;
-			};
-		};
-		CD6A0E1E292875010090258D /* XCRemoteSwiftPackageReference "Drops" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/omaralbeik/Drops.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

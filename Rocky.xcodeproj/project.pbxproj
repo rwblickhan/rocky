@@ -118,12 +118,11 @@
 		CD6A0DDE2927148D0090258D /* Rocky */ = {
 			isa = PBXGroup;
 			children = (
+				CD6A0DDF2927148D0090258D /* RockyApp.swift */,
 				CD6A0E1129271B6A0090258D /* Views */,
 				CD6A0E10292715B50090258D /* Data Model */,
-				CD6A0DDF2927148D0090258D /* RockyApp.swift */,
 				CD6A0DE32927148E0090258D /* Assets.xcassets */,
 				CD6A0DE52927148E0090258D /* Preview Content */,
-				CD30C5CA29319D0500AB4D0B /* RoundedRectangleButtonStyle.swift */,
 			);
 			path = Rocky;
 			sourceTree = "<group>";
@@ -166,6 +165,7 @@
 		CD6A0E1129271B6A0090258D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CD9AFD312B316DAD00A1B753 /* Common */,
 				CD6A0E1429271BF80090258D /* LogView.swift */,
 				CD6A0E1629271C050090258D /* StatsView.swift */,
 				CD30C5C02931534200AB4D0B /* LogClimbRowView.swift */,
@@ -176,6 +176,14 @@
 				CD851EF2294AEE7900E1C2B6 /* GradePinToggleView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		CD9AFD312B316DAD00A1B753 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				CD30C5CA29319D0500AB4D0B /* RoundedRectangleButtonStyle.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

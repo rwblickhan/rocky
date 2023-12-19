@@ -26,7 +26,7 @@ struct DayClimbBatch: Identifiable {
     }
 }
 
-extension Array<Climb> {
+extension [Climb] {
     var batched: [DayClimbBatch] {
         reduce(into: []) { partialResult, nextClimb in
             let nextClimbTimestamp = nextClimb.timestamp

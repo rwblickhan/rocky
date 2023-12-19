@@ -6,8 +6,8 @@
 //
 
 import Charts
-import SwiftUI
 import SwiftData
+import SwiftUI
 
 struct StatsView: View {
     @Query(sort: [SortDescriptor(\Climb.timestamp, order: .reverse)], animation: .default)

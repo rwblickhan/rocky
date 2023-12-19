@@ -5,12 +5,12 @@
 //  Created by Russell Blickhan on 11/17/22.
 //
 
-import SwiftUI
 import SwiftData
+import SwiftUI
 
 struct LogView: View {
     @Environment(\.modelContext) private var modelContext
-    
+
     @Query(sort: [SortDescriptor(\Climb.timestamp, order: .reverse)], animation: .default)
     private var climbs: [Climb]
 
